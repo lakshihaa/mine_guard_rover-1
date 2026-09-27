@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MineRescue Rover | AI-Powered Mine Rescue Support</title>
+  <meta name="description" content="Front-end demonstration dashboard for an AI-powered intelligent mine rescue support rover." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="demo-banner">
+    <span class="pulse"></span>
+    FRONT-END DEMO · SIMULATION MODE · NO REAL SENSOR / BACKEND CONNECTION
+  </div>
+
+  <header class="nav">
+    <a class="brand" href="#home">
+      <span class="brand-mark">MR</span>
+      <span>
+        <strong>MineRescue</strong>
+        <small>INTELLIGENT ROVER</small>
+      </span>
+    </a>
+    <nav>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#technology">Technology</a>
+      <a href="#mission">Mission Flow</a>
+      <a href="#hardware">Hardware</a>
+    </nav>
+    <button class="nav-cta" onclick="scrollToId('dashboard')">Launch Dashboard ↗</button>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow">SMART INDIA HACKATHON · PS 26039</div>
+        <h1>Enter First.<br><span>Detect Early.</span><br>Rescue Safer.</h1>
+        <p class="hero-text">
+          An AI-powered intelligent mine rescue support rover designed to enter hazardous
+          underground zones before human rescuers, sense the environment, capture visual
+          information and deliver actionable situational awareness.
+        </p>
+        <div class="hero-actions">
+          <button class="primary" onclick="scrollToId('dashboard')">Open Rescue Dashboard</button>
+          <button class="secondary" onclick="scrollToId('technology')">Explore Technology</button>
+        </div>
+        <div class="hero-pills">
+          <span>GAS + O₂</span>
+          <span>RGB + THERMAL</span>
+          <span>AI / ML</span>
+          <span>LIVE TELEMETRY</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="radar"></div>
+        <div class="mine-grid"></div>
+        <div class="rover-art">
+          <div class="mast"><div class="camera"></div></div>
+          <div class="body"></div>
+          <div class="wheel w1"></div>
+          <div class="wheel w2"></div>
+          <div class="wheel w3"></div>
+          <div class="wheel w4"></div>
+          <div class="light l1"></div>
+          <div class="light l2"></div>
+        </div>
+        <div class="scan-line"></div>
+        <div class="hud-tag tag-a">THERMAL // READY</div>
+        <div class="hud-tag tag-b">AI ANALYSIS // ACTIVE</div>
+        <div class="hud-tag tag-c">TELEMETRY // LINKED</div>
+      </div>
+    </section>
+
+    <section class="stats-strip">
+      <div><span class="dot green"></span><strong>ROVER ONLINE</strong><small>Simulation telemetry</small></div>
+      <div><strong id="missionTime">00:18:42</strong><small>Mission elapsed</small></div>
+      <div><strong id="batteryTop">87%</strong><small>Battery</small></div>
+      <div><strong id="signalTop">94%</strong><small>Signal quality</small></div>
+      <div><strong>LOW</strong><small>Current risk</small></div>
+    </section>
+
+    <section class="section dashboard-section" id="dashboard">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">CONTROL ROOM</div>
+          <h2>Rescue Operations Dashboard</h2>
+        </div>
+        <div class="mode-chip"><span class="pulse"></span> SIMULATION</div>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="panel mission-panel">
+          <div class="panel-head">
+            <span>MISSION STATUS</span>
+            <span class="status online">● ONLINE</span>
+          </div>
+          <div class="mission-id">MR-ROVER-01</div>
+          <div class="mission-meta">
+            <span>Zone: <b>Sector A-03</b></span>
+            <span>Mode: <b>Remote Recon</b></span>
+          </div>
+          <div class="mission-map">
+            <div class="tunnel tunnel-1"></div>
+            <div class="tunnel tunnel-2"></div>
+            <div class="hazard h1">!</div>
+            <div class="hazard h2">!</div>
+            <div class="person-mark">◉</div>
+            <div class="rover-pin">◆</div>
+            <span class="map-label ml1">ROVER</span>
+            <span class="map-label ml2">GAS ZONE</span>
+            <span class="map-label ml3">THERMAL POINT</span>
+          </div>
+          <div class="map-legend">
+            <span><i class="legend-rover"></i> Rover</span>
+            <span><i class="legend-danger"></i> Hazard</span>
+            <span><i class="legend-person"></i> Possible heat signature</span>
+          </div>
+        </div>
+
+        <div class="panel sensor-panel">
+          <div class="panel-head"><span>ENVIRONMENTAL TELEMETRY</span><span class="muted">auto-refresh</span></div>
+          <div class="sensor-grid">
+            <article class="sensor-card">
+              <span class="sensor-icon gas">CH₄</span><small>METHANE</small>
+              <strong id="ch4">1.18%</strong><em>stable</em>
+            </article>
+            <article class="sensor-card">
+              <span class="sensor-icon oxygen">O₂</span><small>OXYGEN</small>
+              <strong id="o2">20.3%</strong><em>normal</em>
+            </article>
+            <article class="sensor-card">
+              <span class="sensor-icon temp">°C</span><small>TEMPERATURE</small>
+              <strong id="temp">31.8°</strong><em>normal</em>
+            </article>
+            <article class="sensor-card">
+              <span class="sensor-icon humidity">%</span><small>HUMIDITY</small>
+              <strong id="humidity">72%</strong><em>high</em>
+            </article>
+          </div>
+          <div class="mini-chart">
+            <div class="chart-label">GAS TREND · LAST 60 SEC</div>
+            <svg viewBox="0 0 600 150" preserveAspectRatio="none" aria-label="Simulated gas trend chart">
+              <polyline id="chartLine" points="0,110 40,104 80,108 120,92 160,97 200,82 240,88 280,70 320,76 360,63 400,69 440,58 480,64 520,48 560,55 600,42" fill="none" stroke="currentColor" stroke-width="4"/>
+              <line x1="0" y1="125" x2="600" y2="125" stroke="currentColor" opacity=".12"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="panel camera-panel">
+          <div class="panel-head"><span>ROVER VISION</span><span class="status live">● LIVE</span></div>
+          <div class="camera-feed">
+            <div class="camera-overlay top">CAM-01 · FRONT RGB</div>
+            <div class="camera-overlay bottom">SECTOR A-03 · 18:42</div>
+            <div class="fake-tunnel">
+              <div class="beam"></div>
+              <div class="rock r1"></div><div class="rock r2"></div><div class="rock r3"></div>
+              <div class="road"></div>
+            </div>
+            <div class="crosshair">+</div>
+          </div>
+          <div class="camera-actions">
+            <button onclick="toggleCamera()">RGB VIEW</button>
+            <button onclick="toggleCamera()">THERMAL VIEW</button>
+            <button onclick="showToast('Camera snapshot saved in demo mode')">SNAPSHOT</button>
+          </div>
+        </div>
+
+        <div class="panel ai-panel">
+          <div class="panel-head"><span>AI INTELLIGENCE</span><span class="ai-state">PROCESSING</span></div>
+          <div class="ai-score">
+            <div class="score-ring"><span id="riskScore">18</span><small>RISK</small></div>
+            <div><strong>LOW / MONITOR</strong><p>Sensor and vision signals are within the current simulated operating band.</p></div>
+          </div>
+          <div class="ai-events">
+            <div><span class="event-icon green">✓</span><div><b>Environmental check</b><small>Gas / O₂ / temperature analyzed</small></div><time>now</time></div>
+            <div><span class="event-icon blue">◎</span><div><b>Vision scan complete</b><small>No confirmed person detected</small></div><time>12s</time></div>
+            <div><span class="event-icon amber">!</span><div><b>Humidity elevated</b><small>Continue monitoring tunnel conditions</small></div><time>24s</time></div>
+          </div>
+        </div>
+
+        <div class="panel alerts-panel">
+          <div class="panel-head"><span>RESCUE ALERTS</span><span class="alert-count" id="alertCount">03</span></div>
+          <div class="alert-item amber-alert"><b>Humidity elevated</b><span>72% · Sector A-03</span><small>Monitoring recommended</small></div>
+          <div class="alert-item info-alert"><b>Thermal scan available</b><span>Front corridor</span><small>Review visual feed</small></div>
+          <div class="alert-item green-alert"><b>Gas levels stable</b><span>CH₄ 1.18% · O₂ 20.3%</span><small>No immediate simulated warning</small></div>
+          <button class="full-btn" onclick="showToast('Demo alert center opened')">Open Alert Center →</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="technology">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">3-LAYER INTELLIGENCE</div>
+          <h2>Sense → Analyze → Act</h2>
+        </div>
+      </div>
+      <div class="layers">
+        <article class="layer-card sense">
+          <div class="layer-num">01</div>
+          <div class="layer-icon">◌</div>
+          <h3>SENSE</h3>
+          <p>Collect environmental and visual information from the underground mine.</p>
+          <div class="tag-list"><span>Gas</span><span>O₂</span><span>Temperature</span><span>Humidity</span><span>RGB</span><span>Thermal</span></div>
+        </article>
+        <article class="layer-card analyze">
+          <div class="layer-num">02</div>
+          <div class="layer-icon">⌁</div>
+          <h3>ANALYZE</h3>
+          <p>Process sensor and image data to identify anomalies, hazards and possible victim signals.</p>
+          <div class="tag-list"><span>Sensor Fusion</span><span>AI / ML</span><span>CV</span><span>Anomaly Detection</span></div>
+        </article>
+        <article class="layer-card act">
+          <div class="layer-num">03</div>
+          <div class="layer-icon">↗</div>
+          <h3>ACT</h3>
+          <p>Convert analyzed information into alerts, dashboards and rescue decision support.</p>
+          <div class="tag-list"><span>Alerts</span><span>Telemetry</span><span>Dashboard</span><span>Situation Awareness</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section mission-section" id="mission">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">SYSTEM FLOW</div>
+          <h2>From Mine Emergency to Rescue Intelligence</h2>
+        </div>
+      </div>
+      <div class="flow">
+        <div class="flow-step"><span>01</span><b>MINE EMERGENCY</b><small>Hazardous underground conditions</small></div>
+        <i>→</i>
+        <div class="flow-step"><span>02</span><b>ROVER DEPLOYMENT</b><small>Enter before human reconnaissance</small></div>
+        <i>→</i>
+        <div class="flow-step"><span>03</span><b>SENSE + SEE</b><small>Gas, O₂, RGB, thermal and environment</small></div>
+        <i>→</i>
+        <div class="flow-step"><span>04</span><b>AI ANALYSIS</b><small>Fusion, anomaly and hazard analysis</small></div>
+        <i>→</i>
+        <div class="flow-step"><span>05</span><b>TELEMETRY</b><small>Data, video, alerts and rover status</small></div>
+        <i>→</i>
+        <div class="flow-step"><span>06</span><b>RESCUE SUPPORT</b><small>Situation awareness and safer planning</small></div>
+      </div>
+    </section>
+
+    <section class="section hardware-section" id="hardware">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">ROVER PLATFORM</div>
+          <h2>Hardware & Software Stack</h2>
+        </div>
+      </div>
+      <div class="hardware-grid">
+        <div class="hardware-list panel">
+          <div class="panel-head"><span>HARDWARE</span><span class="muted">prototype architecture</span></div>
+          <div class="hardware-row"><b>01</b><span>Rugged rover chassis</span><small>Mobility in uneven terrain</small></div>
+          <div class="hardware-row"><b>02</b><span>Gas + O₂ sensors</span><small>Environmental monitoring</small></div>
+          <div class="hardware-row"><b>03</b><span>RGB + thermal camera</span><small>Visual / heat perception</small></div>
+          <div class="hardware-row"><b>04</b><span>ESP32 / Raspberry Pi</span><small>Control + edge processing</small></div>
+          <div class="hardware-row"><b>05</b><span>Wireless communication</span><small>Telemetry and control</small></div>
+          <div class="hardware-row"><b>06</b><span>Battery + power management</span><small>System power</small></div>
+        </div>
+        <div class="hardware-list panel">
+          <div class="panel-head"><span>SOFTWARE / INTELLIGENCE</span><span class="muted">planned / prototype</span></div>
+          <div class="hardware-row"><b>01</b><span>Embedded C / C++</span><small>Low-level rover control</small></div>
+          <div class="hardware-row"><b>02</b><span>Python + OpenCV</span><small>Data and computer vision</small></div>
+          <div class="hardware-row"><b>03</b><span>Sensor fusion</span><small>Combine multi-modal signals</small></div>
+          <div class="hardware-row"><b>04</b><span>AI / ML analysis</span><small>Hazard and anomaly analysis</small></div>
+          <div class="hardware-row"><b>05</b><span>Web dashboard</span><small>Control-room visualization</small></div>
+          <div class="hardware-row"><b>06</b><span>Alert & risk logic</span><small>Decision-support layer</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta">
+      <div class="cta-box">
+        <div>
+          <div class="eyebrow">AI-POWERED MINE RESCUE SUPPORT</div>
+          <h2>Better information.<br><span>Safer rescue decisions.</span></h2>
+          <p>This front-end is a demonstration interface. Replace the simulated values with your real rover telemetry when the hardware/backend is connected.</p>
+        </div>
+        <button class="primary" onclick="scrollToId('dashboard')">Return to Dashboard ↗</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>MineRescue Rover</strong><span>AI-Powered Intelligent Mine Rescue Support Rover</span></div>
+    <div>SIH PS 26039 · Front-end prototype</div>
+  </footer>
+
+  <div id="toast" class="toast">Demo action completed</div>
+  <script src="script.js"></script>
+</body>
+</html>
